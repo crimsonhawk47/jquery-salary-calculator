@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="jquery.js"></script>
     <script src="client.js"></script>
@@ -11,11 +12,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Employee Salary/Costs Calculator</h1>
-    <main>
-        <div id="totalCostSpace">
-            <p id='totalAnnualCost'>Total Annual Cost: 0</p>
-        </div>
+    <h1 class="jumbotron">Employee Salaries Monthly Cost Calculator</h1>
+    <main class="container">
+
         <div id="inputFields">
             <input type="text" placeholder="First Name" id="firstName">
             <input type="text" placeholder="Last Name" id="lastName">
@@ -24,7 +23,7 @@
             <input type="text" placeholder="Annual Salary" id="annualSalary">
             <button id="submitEmployee">Submit</button>
         </div>
-        <table>
+        <table class="table table-striped">
             <thead>
                 <tr>
                     <th>First Name</th>
@@ -44,7 +43,10 @@
                 </tr>
             </tbody>
         </table>
-    </main>
+        <div id="totalCostSpace">
+            <p id='totalAnnualCost'>Total Monthly Cost: 0</p>
+        </div>
+    </main class="container">
     
 </body>
 </html>

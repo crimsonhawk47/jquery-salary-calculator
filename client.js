@@ -9,7 +9,8 @@ function startScript() {
 }
 
 function addToTotalAnnualSalary(numberToAdd) {
-    totalAnnualSalary += numberToAdd;
+    totalAnnualSalary += numberToAdd/12;
+    
 }
 
 function addEmployee() {
@@ -56,7 +57,7 @@ function deleteCurrentEmployee() {
 function displayTotalCost() {
     let totalCostDisplay = $('#totalCostSpace');
     totalCostDisplay.empty();
-    totalCostDisplay.append(`<p id='totalAnnualCost'>Total Annual Cost: ${totalAnnualSalary}</p>`);
+    totalCostDisplay.append(`<p id='totalAnnualCost'>Total Monthly Cost: ${Math.round(totalAnnualSalary)}</p>`);
 }
 
 function checkIfTotalCostTooHigh() {

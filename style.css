@@ -2,6 +2,16 @@
     background-color: red;
 }
 
+h1{
+    text-align: center;
+}
+
 .justRight{
     background-color: white;
+}
+
+#totalCostSpace{
+    font-size: 30px;
+    display: flex;
+    justify-content: flex-end;
 }
