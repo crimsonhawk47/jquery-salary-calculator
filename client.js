@@ -10,7 +10,7 @@ function startScript() { //Runs when page is done loading
 }
 
 function addToTotalAnnualSalary(numberToAdd) {
-    totalMonthlyCost += numberToAdd/12; //Adds whatever is passed into the global monthly cost
+    totalMonthlyCost += numberToAdd/12\; //Adds whatever is passed into the global monthly cost
     
 }
 
@@ -86,6 +86,9 @@ function checkIfTotalCostTooHigh() {
     }
 
 }
+
+
+
 
 
 
