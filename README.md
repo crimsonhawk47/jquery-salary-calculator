@@ -13,9 +13,8 @@ I have written a salary calculator that compiles employee annual salaries and ca
 
 ## Usage
 
-You may add or remove employees with the submit and delete buttons. The Annual Salary and ID fields expect numbers. 
+You may add or remove employees with the submit and delete buttons. The Annual Salary and ID fields expect numbers. You also cannot add an employee if they share an ID with somebody already in the table. 
 
 ## Roadmap
 
-I am looking to add more functionality. A sort function for starters. Also a percentage field for each employee showing how much they contribute to the monthly budget. To do this, I'm going to need to store the employees differently, and change my functions. 
-
+I am looking to add more functionality. A sort function for starters. Also a percentage field for each employee showing how much they contribute to the monthly budget. 
