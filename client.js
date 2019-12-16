@@ -15,16 +15,18 @@ function startScript() { //Runs when page is done loading
 
 function addEmployee() {
     let idNumber = $('#idNumber').val();
+    //Making sure you don't enter the same employee Twice
     if (employeeList.hasOwnProperty(idNumber)){
         alert('You already entered an employee with that job ID');
         return false;
     }
+    //Grabbing All Input Variables
     let firstName = $('#firstName').val();
     let lastName = $('#lastName').val();
     let jobTitle = $('#jobTitle').val();
-    let annualSalary = $('#annualSalary').val(); //Grabbing All Input Variables
-    
-    employeeList[idNumber] = { //Adding the inputs into an employee, with a key of the ID Number of that employee
+    let annualSalary = $('#annualSalary').val(); 
+    //Adding the inputs into an employeeList object, with a key of the ID Number of that employee
+    employeeList[idNumber] = { 
         firstName: firstName,
         lastName: lastName,
         idNumber: idNumber,
@@ -40,7 +42,8 @@ function addEmployee() {
 
 function updateTotalAnnualSalary() {
     let newMonthlyCost = 0;
-    for (employeeKey in employeeList) { //Loops through the list of employees and adds all salaries
+    //Looping through the list of employees and adding all salaries
+    for (employeeKey in employeeList) { 
         newMonthlyCost += Number(employeeList[employeeKey].annualSalary)
     }
     totalMonthlyCost = newMonthlyCost / 12; //changes global monthlyCost
@@ -49,7 +52,7 @@ function updateTotalAnnualSalary() {
 
 
 function deleteCurrentEmployee() {
-    //A delete button will trigger this. We need the individual employee ID from the row so we can
+    //A delete button will trigger this function. We need the individual employee ID from the row so we can
     //index the object and delete the employee. 
     let deletedEmployeeID = $(this).closest('tr').find('.individualEmployeeID').text();
 
@@ -64,18 +67,19 @@ function deleteCurrentEmployee() {
 }
 
 function displayTotalCost() {
-    //Grabs the area displaying the monthly cost
+    //selects the area displaying the monthly cost
     let totalCostDisplay = $('#totalCostSpace');
-    //Empties it
+    //Empties the selected area
     totalCostDisplay.empty();
     //Adds back to the display, giving the newly updated Monthly Cost
     totalCostDisplay.append(`<p id='totalAnnualCost'>Total Monthly Cost: ${Math.round(totalMonthlyCost)}</p>`);
 }
 
 function updateTable() {
-    $('#employeeDataTable').empty(); //Empties the table
-    
-    for (employeeKey in employeeList) { //Fills the table with all the employees from the object
+    //Emptying the table
+    $('#employeeDataTable').empty(); 
+    //Fills the table with all the employees from the object
+    for (employeeKey in employeeList) { 
         let employee = employeeList[employeeKey]
         $('#employeeDataTable').append(`
         <tr class='employee'>
