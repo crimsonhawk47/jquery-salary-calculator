@@ -5,35 +5,11 @@ let employeeList = {}; //Object to hold employees
 
 
 function startScript() { //Runs when page is done loading
-    $('#submitEmployee').on('click', addEmployee); //Adds a click function to submit button
+    // Adding a click event to the submit button
+    $('#submitEmployee').on('click', addEmployee); 
+    //Adding a click event to ANY employee delete dynamically. 
     $('tbody').on('click', '.deleteEmployeeButton', deleteCurrentEmployee);
-    // ^^^^Adds a click event to ANY employee buttons dynamically. 
 
-}
-
-function updateTotalAnnualSalary() {
-    let newMonthlyCost = 0;
-    for (employeeKey in employeeList) { //Loops through the list of employees and adds all salaries
-        newMonthlyCost += Number(employeeList[employeeKey].annualSalary)
-    }
-    totalMonthlyCost = newMonthlyCost / 12; //changes global monthlyCost
-}
-
-function updateTable() {
-    $('#employeeDataTable').empty(); //Empties the table
-    
-    for (employeeKey in employeeList) { //Fills the table with all the employees from the object
-        let employee = employeeList[employeeKey]
-        $('#employeeDataTable').append(`
-        <tr class='employee'>
-            <td>${employee.firstName}</td>
-            <td>${employee.lastName}</td>
-            <td class="individualEmployeeID">${employee.idNumber}</td>
-            <td>${employee.jobTitle}</td>
-            <td class="individualEmployeeSalary">${employee.annualSalary}</td>
-            <td><button class='deleteEmployeeButton'>Delete</button></td>
-        </tr>`);
-    }
 }
 
 
@@ -62,6 +38,14 @@ function addEmployee() {
     return true;
 }
 
+function updateTotalAnnualSalary() {
+    let newMonthlyCost = 0;
+    for (employeeKey in employeeList) { //Loops through the list of employees and adds all salaries
+        newMonthlyCost += Number(employeeList[employeeKey].annualSalary)
+    }
+    totalMonthlyCost = newMonthlyCost / 12; //changes global monthlyCost
+}
+
 
 
 function deleteCurrentEmployee() {
@@ -86,6 +70,23 @@ function displayTotalCost() {
     totalCostDisplay.empty();
     //Adds back to the display, giving the newly updated Monthly Cost
     totalCostDisplay.append(`<p id='totalAnnualCost'>Total Monthly Cost: ${Math.round(totalMonthlyCost)}</p>`);
+}
+
+function updateTable() {
+    $('#employeeDataTable').empty(); //Empties the table
+    
+    for (employeeKey in employeeList) { //Fills the table with all the employees from the object
+        let employee = employeeList[employeeKey]
+        $('#employeeDataTable').append(`
+        <tr class='employee'>
+            <td>${employee.firstName}</td>
+            <td>${employee.lastName}</td>
+            <td class="individualEmployeeID">${employee.idNumber}</td>
+            <td>${employee.jobTitle}</td>
+            <td class="individualEmployeeSalary">${employee.annualSalary}</td>
+            <td><button class='deleteEmployeeButton btn btn-outline-danger'>Delete</button></td>
+        </tr>`);
+    }
 }
 
 function checkIfTotalCostTooHigh() {
