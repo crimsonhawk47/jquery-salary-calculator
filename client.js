@@ -27,7 +27,7 @@ function addEmployee() {
     let annualSalary = $('#annualSalary').val(); 
     if (!Number(annualSalary)){
         alert(`You didn't open a number for their salary`);
-        
+        return false;
     }
     //Adding the inputs into an employeeList object, with a key of the ID Number of that employee
     employeeList[idNumber] = { 
@@ -41,6 +41,7 @@ function addEmployee() {
     updateTable();
     displayTotalCost(); 
     checkIfTotalCostTooHigh();
+    emptyInput();
     return true;
 }
 
@@ -110,5 +111,12 @@ function checkIfTotalCostTooHigh() {
         $('#totalCostSpace').removeClass('tooHigh');
         $('#totalCostSpace').addClass('justRight');
     }
+}
 
+function emptyInput() {
+    $('#firstName').val('');
+    $('#lastName').val('');
+    $('#idNumber').val('');
+    $('#jobTitle').val('');
+    $('#annualSalary').val('');
 }
