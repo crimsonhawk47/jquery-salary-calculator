@@ -25,6 +25,10 @@ function addEmployee() {
     let lastName = $('#lastName').val();
     let jobTitle = $('#jobTitle').val();
     let annualSalary = $('#annualSalary').val(); 
+    if (!Number(annualSalary)){
+        alert(`You didn't open a number for their salary`);
+        
+    }
     //Adding the inputs into an employeeList object, with a key of the ID Number of that employee
     employeeList[idNumber] = { 
         firstName: firstName,
