@@ -1,9 +1,21 @@
-# Project Name
+# Jquery Salary Calculator
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Duration: 2 hour sprint with touchups over a weekend
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
+I have written a salary calculator that compiles employee annual salaries and calculates the total monthly cost of having said employees. It allows a user to add and delete employees on the table. It will update the monthly 
+
+## Visuals
+
+![image](image.png)
+
+## Usage
+
+You may add or remove employees with the submit and delete buttons. The Annual Salary and ID fields expect numbers. 
+
+## Roadmap
+
+I am looking to add more functionality. A sort function for starters. Also a percentage field for each employee showing how much they contribute to the monthly budget. To do this, I'm going to need to store the employees differently, and change my functions. 
+

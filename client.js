@@ -2,6 +2,7 @@ $(document).ready(startScript);
 
 let totalMonthlyCost = 0; //A global variable for all Employee Salaries
 
+
 function startScript() { //Runs when page is done loading
     $('#submitEmployee').on('click', addEmployee); //Adds a click function to submit button
     $('tbody').on('click', '.deleteEmployeeButton', deleteCurrentEmployee);  
@@ -73,7 +74,7 @@ function displayTotalCost() {
 
 function checkIfTotalCostTooHigh() {
     //If the totalMonthlyCost exceeds 20000...
-    if (totalMonthlyCost > 20000) {
+    if (totalMonthlyCost >= 20000) {
         //Switch the classes to something that makes it red
         $('#totalCostSpace').addClass('tooHigh');
         $('#totalCostSpace').removeClass('justRight');
